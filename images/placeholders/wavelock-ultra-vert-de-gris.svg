@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#faf9f7"/>
+      <stop offset="1" stop-color="#f4f2ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="1000" fill="url(#bg)"/>
+  <circle cx="500" cy="480" r="306" fill="none" stroke="#e8e6e2" stroke-width="1"/>
+  <circle cx="500" cy="480" r="260" fill="#c4d3cc" stroke="#90ac9f" stroke-width="3"/>
+  <text x="500" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="8" fill="#0c0c0c">JAYPEE</text>
+  <text x="500" y="525" text-anchor="middle" font-family="Georgia, serif" font-size="150" font-weight="400" fill="#51665c">W</text>
+  <circle cx="384.0" cy="650" r="7" fill="#7d9e8f" stroke="#0c0c0c" stroke-width="1"/>
+  <text x="512" y="656" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1" fill="#0c0c0c">VERT DE GRIS</text>
+  <text x="500" y="694" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="3" fill="#8a8a8a">WAVELOCK ULTRA</text>
+  <text x="500" y="920" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" letter-spacing="3" fill="#c8b6a6">PHOTO A VENIR</text>
+</svg>

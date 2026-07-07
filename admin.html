@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Espace Admin — JAYPEE</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="adm-app" id="admApp">
+
+  <!-- ═══════════ ÉCRAN DE CONNEXION ═══════════ -->
+  <div class="adm-login-shell" id="admLogin" style="display:none">
+    <div class="adm-login-card">
+      <div class="adm-login-logo">
+        <svg viewBox="0 0 200 90" xmlns="http://www.w3.org/2000/svg" height="42">
+          <rect width="200" height="90" fill="#0c0c0c"/>
+          <rect x="8" y="6" width="184" height="37" fill="#cc1111"/>
+          <polygon points="16,24.5 26,15 26,34" fill="white"/>
+          <polygon points="184,24.5 174,15 174,34" fill="white"/>
+          <text x="100" y="32" font-family="Montserrat,Arial,sans-serif" font-size="20" font-weight="800" fill="white" text-anchor="middle" letter-spacing="4">JAYPEE</text>
+          <rect x="8" y="47" width="184" height="37" fill="#e8721e"/>
+          <polygon points="16,65.5 26,56 26,75" fill="#0c0c0c"/>
+          <text x="80" y="72" font-family="Montserrat,Arial,sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle" letter-spacing="3">JAYPEE</text>
+          <text x="148" y="72" font-family="Montserrat,Arial,sans-serif" font-size="16" font-weight="800" fill="#0c0c0c" text-anchor="middle" letter-spacing="1">PLUS</text>
+        </svg>
+      </div>
+      <div class="adm-login-ttl">Espace Admin</div>
+      <div class="adm-login-sub">Gestion du catalogue JAYPEE</div>
+      <div class="adm-login-err" id="admLoginErr"></div>
+      <form id="admLoginForm">
+        <div class="af-fld" style="margin-bottom:14px">
+          <label class="af-lbl">Email</label>
+          <input class="af-inp" type="email" id="admEmail" required autocomplete="username"/>
+        </div>
+        <div class="af-fld">
+          <label class="af-lbl">Mot de passe</label>
+          <input class="af-inp" type="password" id="admPassword" required autocomplete="current-password"/>
+        </div>
+        <button class="adm-login-btn" type="submit" id="admLoginBtn">Se connecter</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ═══════════ DASHBOARD ═══════════ -->
+  <div id="admDash" style="display:none">
+    <div class="adm-topbar">
+      <div class="adm-topbar-l">
+        <div class="logo-svg-wrap" style="opacity:.92">
+          <svg viewBox="0 0 200 90" xmlns="http://www.w3.org/2000/svg" height="34">
+            <rect width="200" height="90" fill="#0c0c0c"/>
+            <rect x="8" y="6" width="184" height="37" fill="#cc1111"/>
+            <polygon points="16,24.5 26,15 26,34" fill="white"/>
+            <polygon points="184,24.5 174,15 174,34" fill="white"/>
+            <text x="100" y="32" font-family="Montserrat,Arial,sans-serif" font-size="20" font-weight="800" fill="white" text-anchor="middle" letter-spacing="4">JAYPEE</text>
+            <rect x="8" y="47" width="184" height="37" fill="#e8721e"/>
+            <polygon points="16,65.5 26,56 26,75" fill="#0c0c0c"/>
+            <text x="80" y="72" font-family="Montserrat,Arial,sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle" letter-spacing="3">JAYPEE</text>
+            <text x="148" y="72" font-family="Montserrat,Arial,sans-serif" font-size="16" font-weight="800" fill="#0c0c0c" text-anchor="middle" letter-spacing="1">PLUS</text>
+          </svg>
+        </div>
+        <div class="adm-topbar-ttl">Espace Admin</div>
+      </div>
+      <div class="adm-topbar-r">
+        <span class="adm-topbar-email" id="admUserEmail"></span>
+        <a href="index.html" class="admin-btn admin-btn-sec">Voir le site</a>
+        <button class="admin-btn admin-btn-sec" id="admLogoutBtn">Déconnexion</button>
+      </div>
+    </div>
+
+    <div class="adm-tabs">
+      <button class="adm-tab active" data-tab="products">Produits</button>
+      <button class="adm-tab" data-tab="catalogs">Catalogues</button>
+      <button class="adm-tab" data-tab="reviews">Reviews</button>
+      <button class="adm-tab" data-tab="images">Images</button>
+    </div>
+
+    <!-- PRODUITS -->
+    <div class="adm-tabpanel" id="tabProducts">
+      <div class="adm-shell">
+        <div class="adm-side">
+          <div class="admin-side-h"><span>Produits</span></div>
+          <button class="admin-add" id="admNewProductBtn">+ Nouveau produit</button>
+          <div class="adm-toolbar">
+            <input class="af-inp" id="admProductSearch" placeholder="Rechercher un produit…"/>
+          </div>
+          <div class="adm-toolbar">
+            <select class="af-sel" id="admProductCatalogFilter"><option value="">Tous catalogues</option></select>
+          </div>
+          <div class="admin-list" id="admProductList"><div class="adm-loading"><span class="adm-spin dark"></span> Chargement…</div></div>
+        </div>
+        <div class="admin-form" id="admProductFormWrap">
+          <div class="admin-empty"><div class="admin-empty-ico">📦</div><div>Sélectionnez un produit ou créez-en un nouveau.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATALOGUES -->
+    <div class="adm-tabpanel" id="tabCatalogs" style="display:none">
+      <div class="adm-shell">
+        <div class="adm-side">
+          <div class="admin-side-h"><span>Catalogues</span></div>
+          <button class="admin-add" id="admNewCatalogBtn">+ Nouveau catalogue</button>
+          <div class="admin-list" id="admCatalogList"><div class="adm-loading"><span class="adm-spin dark"></span> Chargement…</div></div>
+        </div>
+        <div class="admin-form" id="admCatalogFormWrap">
+          <div class="admin-empty"><div class="admin-empty-ico">🗂️</div><div>Sélectionnez un catalogue ou créez-en un nouveau.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="adm-tabpanel" id="tabReviews" style="display:none">
+      <div class="adm-shell">
+        <div class="adm-side">
+          <div class="admin-side-h"><span>Avis clients</span></div>
+          <button class="admin-add" id="admNewReviewBtn">+ Nouvel avis</button>
+          <div class="adm-toolbar">
+            <select class="af-sel" id="admReviewProductFilter"><option value="">Tous produits</option></select>
+          </div>
+          <div class="admin-list" id="admReviewList"><div class="adm-loading"><span class="adm-spin dark"></span> Chargement…</div></div>
+        </div>
+        <div class="admin-form" id="admReviewFormWrap">
+          <div class="admin-empty"><div class="admin-empty-ico">💬</div><div>Sélectionnez un avis ou créez-en un nouveau.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMAGES -->
+    <div class="adm-tabpanel" id="tabImages" style="display:none">
+      <div style="padding:26px 34px">
+        <div class="admin-side-h" style="padding:0 0 16px"><span>Toutes les images du catalogue</span></div>
+        <div class="adm-gallery" id="admGallery"><div class="adm-loading"><span class="adm-spin dark"></span> Chargement…</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Boîte de confirmation -->
+<div class="adm-confirm-overlay" id="admConfirmOverlay">
+  <div class="adm-confirm-box">
+    <div class="adm-confirm-ttl" id="admConfirmTtl">Confirmer la suppression</div>
+    <div class="adm-confirm-txt" id="admConfirmTxt"></div>
+    <div class="adm-confirm-actions">
+      <button class="admin-btn admin-btn-sec" id="admConfirmCancel">Annuler</button>
+      <button class="admin-btn admin-btn-dng" id="admConfirmOk">Supprimer</button>
+    </div>
+  </div>
+</div>
+
+<div class="af-toast" id="admToast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config/supabase-config.js"></script>
+<script src="admin/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>JAYPEE — L'art de vivre marocain, réinventé</title>
+  <meta name="description" content="JAYPEE — La nouvelle marque marocaine premium de récipients isothermes en acier inoxydable. The Kitchen Collection, 12 pièces d'exception."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="c">
+    <div class="tb-msg"><span class="tb-dot"></span>Nouvelle marque au Maroc &nbsp;·&nbsp; Livraison disponible partout au Maroc</div>
+    <div class="tb-soc"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">WhatsApp</a></div>
+  </div>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="c">
+    <a href="index.html" class="logo-svg-wrap" aria-label="JAYPEE Accueil">
+      <svg viewBox="0 0 200 90" xmlns="http://www.w3.org/2000/svg" height="48">
+        <rect width="200" height="90" fill="#0c0c0c"/>
+        <rect x="8" y="6" width="184" height="37" fill="#cc1111"/>
+        <polygon points="16,24.5 26,15 26,34" fill="white"/>
+        <polygon points="184,24.5 174,15 174,34" fill="white"/>
+        <text x="100" y="32" font-family="Montserrat,Arial,sans-serif" font-size="20" font-weight="800" fill="white" text-anchor="middle" letter-spacing="4">JAYPEE</text>
+        <rect x="8" y="47" width="184" height="37" fill="#e8721e"/>
+        <polygon points="16,65.5 26,56 26,75" fill="#0c0c0c"/>
+        <text x="80" y="72" font-family="Montserrat,Arial,sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle" letter-spacing="3">JAYPEE</text>
+        <text x="148" y="72" font-family="Montserrat,Arial,sans-serif" font-size="16" font-weight="800" fill="#0c0c0c" text-anchor="middle" letter-spacing="1">PLUS</text>
+      </svg>
+    </a>
+    <nav class="nav">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="produits.html">Produits</a>
+      <a href="marque.html">La marque</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hdr-cta">
+      <a href="contact.html" class="btn-border">Nous contacter</a>
+      <button class="hamburger" onclick="openMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="closeMenu()">✕</button>
+  <a href="index.html" class="active" onclick="closeMenu()">Accueil</a>
+  <a href="produits.html" onclick="closeMenu()">Produits</a>
+  <a href="marque.html" onclick="closeMenu()">La marque</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('images/accueil.jpg')"></div>
+  <div class="c">
+    <div class="hero-badge">The Kitchen Collection 2025</div>
+    <h1>L'art de vivre<br/><em>marocain</em>, réinventé.</h1>
+    <p class="hero-sub">JAYPEE conçoit des récipients isothermes en acier inoxydable premium — pensés pour l'intérieur marocain contemporain, fabriqués pour durer.</p>
+    <div class="hero-acts">
+      <a href="produits.html" class="btn-primary">Découvrir la collection</a>
+      <a href="marque.html" class="btn-ghost">Notre histoire →</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Défiler</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ════════════════ MARQUEE ════════════════ -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <div class="marquee-item"><span class="d"></span>Acier inoxydable 18/8</div>
+    <div class="marquee-item"><span class="d"></span>Conservation jusqu'à 36h</div>
+    <div class="marquee-item"><span class="d"></span>1ère marque marocaine premium</div>
+    <div class="marquee-item"><span class="d"></span>Livraison partout au Maroc</div>
+    <div class="marquee-item"><span class="d"></span>Acier inoxydable 18/8</div>
+    <div class="marquee-item"><span class="d"></span>Conservation jusqu'à 36h</div>
+    <div class="marquee-item"><span class="d"></span>1ère marque marocaine premium</div>
+    <div class="marquee-item"><span class="d"></span>Livraison partout au Maroc</div>
+  </div>
+</div>
+
+<!-- ════════════════ UNIVERS ════════════════ -->
+<section class="univers">
+  <div class="c">
+    <div class="univers-hdr">
+      <div class="s-label">Explorer</div>
+      <h2 class="s-title">Notre <em>univers.</em></h2>
+    </div>
+    <div class="univers-grid">
+      <a href="produits.html" class="ucard reveal">
+        <div class="ucard-bg" style="background-image:url('images/accueil.jpg')"></div>
+        <div class="ucard-ov"></div>
+        <div class="ucard-cnt">
+          <div class="ucard-tag">12 pièces</div>
+          <div class="ucard-title">The Kitchen<br/>Collection</div>
+          <div class="ucard-arrow">→</div>
+        </div>
+      </a>
+      <a href="marque.html" class="ucard reveal d1">
+        <div class="ucard-bg" style="background-image:url('images/JAYPEE WEB IMAGESArtboard 1.jpg')"></div>
+        <div class="ucard-ov"></div>
+        <div class="ucard-cnt">
+          <div class="ucard-tag">Depuis 2025</div>
+          <div class="ucard-title">La marque<br/>JAYPEE</div>
+          <div class="ucard-arrow">→</div>
+        </div>
+      </a>
+      <a href="contact.html" class="ucard reveal d2">
+        <div class="ucard-bg" style="background-image:url('images/JAYPEE WEB IMAGESArtboard 2.jpg')"></div>
+        <div class="ucard-ov"></div>
+        <div class="ucard-cnt">
+          <div class="ucard-tag">Maroc</div>
+          <div class="ucard-title">Nous<br/>contacter</div>
+          <div class="ucard-arrow">→</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ PRODUITS VEDETTES (dynamique) ════════════════ -->
+<section class="products" id="produits">
+  <div class="c">
+    <div class="prod-hdr">
+      <div class="reveal">
+        <div class="s-label">Sélection</div>
+        <h2 class="s-title">Nos pièces <em>vedettes.</em></h2>
+      </div>
+      <a href="produits.html" class="btn-ghost" style="color:var(--black);border-color:rgba(0,0,0,.2)">Voir toute la collection →</a>
+    </div>
+    <div class="prod-grid" id="featGrid"></div>
+  </div>
+</section>
+
+<!-- ════════════════ POURQUOI NOUS ════════════════ -->
+<section class="why">
+  <div class="c">
+    <div class="why-vis reveal">
+      <div class="why-frame"></div>
+      <div class="why-img"></div>
+      <div class="why-lbl">JAYPEE — Maroc 2025</div>
+    </div>
+    <div>
+      <div class="reveal">
+        <div class="s-label">Pourquoi nous choisir</div>
+        <h2 class="s-title">Quatre piliers,<br/>une seule <em>vision.</em></h2>
+        <div class="divider"></div>
+        <p class="s-desc">Nous croyons que la qualité du quotidien mérite une attention particulière. JAYPEE naît de cette conviction — apporter au foyer marocain des pièces qui allient esthétique, durabilité et performance.</p>
+      </div>
+      <div class="why-list">
+        <div class="why-item reveal d1">
+          <div class="why-num">01</div>
+          <div>
+            <div class="why-title">Acier inoxydable de qualité supérieure</div>
+            <div class="why-txt">Chaque récipient est fabriqué en acier inoxydable alimentaire, robuste et hygiénique, garanti pour une conservation thermique optimale jusqu'à 36 heures.</div>
+          </div>
+        </div>
+        <div class="why-item reveal d2">
+          <div class="why-num">02</div>
+          <div>
+            <div class="why-title">Design pensé pour l'intérieur marocain</div>
+            <div class="why-txt">Nos coloris et nos lignes épurées sont conçus pour s'harmoniser avec les espaces contemporains marocains — de la cuisine ouverte au salon moderne.</div>
+          </div>
+        </div>
+        <div class="why-item reveal d3">
+          <div class="why-num">03</div>
+          <div>
+            <div class="why-title">Nouvelle signature lifestyle au Maroc</div>
+            <div class="why-txt">JAYPEE est la première marque marocaine à proposer une collection de récipients isothermes premium — une identité forte, locale et ambitieuse.</div>
+          </div>
+        </div>
+        <div class="why-item reveal d4">
+          <div class="why-num">04</div>
+          <div>
+            <div class="why-title">Service &amp; accessibilité partout au Maroc</div>
+            <div class="why-txt">Livraison dans toutes les villes du Maroc, service client réactif et accompagnement personnalisé pour chaque commande.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ KITCHEN EDITORIAL ════════════════ -->
+<section class="kitchen">
+  <div class="c">
+    <div class="kitchen-text reveal">
+      <div class="s-label">The Kitchen Collection</div>
+      <h2 class="s-title" style="color:#fff">Le premier chapitre<br/>de <em>JAYPEE.</em></h2>
+      <div class="divider"></div>
+      <p class="s-desc" style="color:rgba(255,255,255,.52);margin-top:4px">
+        The Kitchen Collection est le premier chapitre de JAYPEE — une sélection minutie
