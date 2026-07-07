@@ -941,4 +941,3 @@ async function galDelete(imageId) {
 
 /* ═══════════════════════ INIT ═══════════════════════ */
 initAuth();
-  
