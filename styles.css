@@ -563,3 +563,110 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .pdp-thumb-color.active{border-color:var(--black)}
 .pdp-thumbs{align-items:center}
 @media(max-width:640px){.pdp-thumb-img,.pdp-thumb-color{width:54px;height:54px}}
+
+/* ════════════════════════════════════════════
+   ADMIN PANEL — SHELL (adm-*)
+   Classes référencées par admin.html / admin.js
+   mais absentes de la feuille de style.
+════════════════════════════════════════════ */
+.adm-app{min-height:100vh;background:var(--warm)}
+
+/* Écran de connexion */
+.adm-login-shell{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--black);padding:24px}
+.adm-login-card{width:100%;max-width:380px;background:var(--warm);padding:44px 38px 38px;box-shadow:var(--sh-lg)}
+.adm-login-logo{display:flex;justify-content:center;margin-bottom:26px}
+.adm-login-ttl{font-family:var(--serif);font-size:26px;font-weight:400;color:var(--black);text-align:center;margin-bottom:6px}
+.adm-login-sub{font-family:var(--caps);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);text-align:center;margin-bottom:28px}
+.adm-login-err{display:none;background:rgba(204,17,17,.08);border:1px solid rgba(204,17,17,.3);color:var(--red);font-size:12px;padding:10px 14px;margin-bottom:16px;text-align:center}
+.adm-login-err.show{display:block}
+.adm-login-btn{width:100%;background:var(--black);color:var(--white);font-family:var(--caps);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:15px;border:none;cursor:pointer;transition:all var(--tr);margin-top:18px}
+.adm-login-btn:hover{background:var(--orange-s)}
+.adm-login-btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* Barre du haut */
+.adm-topbar{display:flex;align-items:center;justify-content:space-between;background:var(--black);color:var(--white);padding:16px 32px;flex-wrap:wrap;gap:12px}
+.adm-topbar-l{display:flex;align-items:center;gap:16px}
+.adm-topbar-ttl{font-family:var(--serif);font-size:19px;font-weight:400}
+.adm-topbar-r{display:flex;align-items:center;gap:12px}
+.adm-topbar-email{font-family:var(--caps);font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.45)}
+
+/* Onglets */
+.adm-tabs{display:flex;gap:2px;background:var(--cream);border-bottom:1px solid var(--cloud);padding:0 32px;overflow-x:auto}
+.adm-tab{font-family:var(--caps);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);background:none;border:none;padding:18px 20px;cursor:pointer;position:relative;transition:color var(--tr);white-space:nowrap}
+.adm-tab::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:transparent;transition:background var(--tr)}
+.adm-tab:hover{color:var(--char)}
+.adm-tab.active{color:var(--black)}
+.adm-tab.active::after{background:var(--orange)}
+
+/* Panneaux + disposition en 2 colonnes */
+.adm-shell{display:grid;grid-template-columns:300px 1fr;min-height:calc(100vh - 150px)}
+.adm-side{background:var(--cream);border-right:1px solid var(--cloud);padding:20px 16px;overflow-y:auto}
+.adm-toolbar{margin-bottom:12px}
+.admin-form{background:var(--warm)}
+.admin-litem{justify-content:space-between}
+.admin-litem-r{display:flex;align-items:center;flex-shrink:0}
+
+/* chargement */
+.adm-loading{display:flex;align-items:center;gap:10px;padding:24px 10px;color:var(--mid);font-family:var(--sans);font-size:13px}
+.adm-spin{width:16px;height:16px;border-radius:50%;border:2px solid var(--cloud);border-top-color:var(--orange);animation:adm-spin-rot .7s linear infinite;display:inline-block}
+.adm-spin.dark{border-color:rgba(0,0,0,.12);border-top-color:var(--orange-s)}
+@keyframes adm-spin-rot{to{transform:rotate(360deg)}}
+
+/* pastille statut */
+.adm-pill{font-family:var(--caps);font-size:8px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:4px 9px;border-radius:20px;flex-shrink:0}
+.adm-pill.on{background:rgba(45,122,79,.12);color:#2d7a4f}
+.adm-pill.off{background:rgba(138,138,138,.14);color:var(--mid)}
+
+/* interrupteur on/off */
+.adm-toggle-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0}
+.adm-toggle-row span{font-size:13px;color:var(--char)}
+.adm-switch{position:relative;display:inline-block;width:42px;height:24px;cursor:pointer;flex-shrink:0}
+.adm-switch input{opacity:0;width:0;height:0;position:absolute}
+.adm-switch-track{position:absolute;inset:0;background:var(--cloud);border-radius:24px;transition:background var(--tr)}
+.adm-switch-track::before{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;background:var(--white);border-radius:50%;transition:transform var(--tr);box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.adm-switch input:checked + .adm-switch-track{background:var(--orange-s)}
+.adm-switch input:checked + .adm-switch-track::before{transform:translateX(18px)}
+
+/* champ requis + indice */
+.adm-required{color:var(--red)}
+.adm-field-hint{font-size:11px;color:var(--mid);font-style:italic;padding:8px 0}
+
+/* étoiles */
+.adm-stars{color:var(--orange-s);font-size:13px;letter-spacing:1px}
+.adm-stars span.off{color:var(--cloud)}
+
+/* boutons compacts */
+.adm-btn-xs{font-family:var(--caps);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:var(--white);border:1px solid var(--cloud);color:var(--char);padding:6px 10px;cursor:pointer;transition:all var(--tr)}
+.adm-btn-xs:hover{border-color:var(--black);background:var(--cream)}
+.adm-btn-xs.dng:hover{border-color:var(--red);color:var(--red);background:rgba(204,17,17,.06)}
+
+/* galerie */
+.adm-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.adm-gal-card{background:var(--white);border:1px solid var(--cloud);overflow:hidden;transition:all var(--tr)}
+.adm-gal-card:hover{border-color:var(--orange);box-shadow:var(--sh-sm)}
+.adm-gal-vis{position:relative;aspect-ratio:1;background:var(--cream)}
+.adm-gal-vis img{width:100%;height:100%;object-fit:cover;display:block}
+.adm-gal-primary-badge{position:absolute;top:8px;left:8px;background:var(--orange-s);color:var(--white);font-family:var(--caps);font-size:8px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px}
+.adm-gal-body{padding:10px 12px}
+.adm-gal-name{font-family:var(--sans);font-size:12px;font-weight:500;color:var(--black);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.adm-gal-meta{font-family:var(--caps);font-size:9px;letter-spacing:.1em;color:var(--mid);margin-top:2px}
+.adm-gal-actions{display:flex;border-top:1px solid var(--cloud)}
+.adm-gal-actions .adm-btn-xs{flex:1;border:none;border-right:1px solid var(--cloud);border-radius:0}
+.adm-gal-actions .adm-btn-xs:last-child{border-right:none}
+
+/* boîte de confirmation */
+.adm-confirm-overlay{position:fixed;inset:0;background:rgba(10,10,10,.6);z-index:9500;display:none;align-items:center;justify-content:center;backdrop-filter:blur(3px)}
+.adm-confirm-overlay.open{display:flex}
+.adm-confirm-box{background:var(--warm);width:min(420px,92vw);padding:30px 30px 26px;box-shadow:var(--sh-lg)}
+.adm-confirm-ttl{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--black);margin-bottom:10px}
+.adm-confirm-txt{font-size:13px;color:var(--dark);line-height:1.6;margin-bottom:24px}
+.adm-confirm-actions{display:flex;justify-content:flex-end;gap:10px}
+.adm-confirm-actions .admin-btn-sec{color:var(--black);border-color:var(--cloud)}
+.adm-confirm-actions .admin-btn-sec:hover{background:var(--cloud)}
+
+@media(max-width:900px){
+  .adm-shell{grid-template-columns:1fr}
+  .adm-side{border-right:none;border-bottom:1px solid var(--cloud);max-height:340px}
+  .adm-topbar{padding:14px 20px}
+  .adm-tabs{padding:0 16px}
+}
